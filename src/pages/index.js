@@ -24,7 +24,12 @@ export default function Home() {
 
           <div className="flex items-center justify-between w-full">
             <div className='w-1/2'>
-              <Image src={profilePic} alt="Sebas Osorio" className='w-full h-auto' />
+              <Image src={profilePic} alt="Sebas Osorio" className='w-full h-auto'
+              priority
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw"
+              />
             </div>
             <div className='w-1/2 flex flex-col items-center self-center'>
 
