@@ -36,9 +36,9 @@ const Education = () => {
         }
     );
     return (
-        <div className='my-64'>
+        <div className='my-40'>
             <h2 className='font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16'>
-                Experience
+                Education
             </h2>
 
             <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
@@ -53,15 +53,15 @@ const Education = () => {
                     <Details
                         type="Bachelor Of Science In Computer Science"
                         time="2021-Present"
-                        place="University of Minnesota (UMN)"
+                        place="University of Minnesota Twin Cities"
                         info="Relevant courses included Data Structures and Algorithms, User Interface Design, and Operating
                         Systems."
                     />
                     <Details
                         type="High School Diploma"
                         time="2017-2021"
-                        place="Math and Science Academy"
-                        info="fill this out"
+                        place="Math and Science Academy, Woodbury"
+                        info="Relevant activities include LINK Crew, Boy's Volleyball, Academic Triathlon, LEGO Robotics"
                     />
                 </ul>
 

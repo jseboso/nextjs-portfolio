@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import React from "react";
 import { GithubIcon } from "@/components/Icons";
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg"
+import project1 from "../../public/images/projects/codeScreenshot.png"
 import { motion } from "framer-motion"
 import TransitionEffect from "@/components/TransitionEffect";
 
@@ -107,20 +107,16 @@ const projects = () => {
             <TransitionEffect />
             <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
                 <Layout className='pt-16'>
-                    <AnimatedText text="Imagination Trumps Knowledge!"
-                        className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+                    <AnimatedText text="Projects"
+                        className="mb-16 mt-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
                     />
 
                     <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
                         <div className="col-span-12">
                             <FeaturedProject
-                                title="Crypto Screener Application"
+                                title="Test Project"
                                 img={project1}
-                                summary="Developed a full-stack music assistant application designed to facilitate learning in
-                                    music theory. Utilized React for the front-end and SQL for database management, incorporating
-                                    a Node.js backend for efficient integration. Provided users interactive tools to
-                                    memorize chord progressions and scales, along with functionality to monitor
-                                    their learning progress."
+                                summary="Test summary"
                                 link="/"
                                 github="/"
                                 type="Featured Project"
@@ -128,13 +124,9 @@ const projects = () => {
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Crypto Screener Application"
+                                title="Test Project"
                                 img={project1}
-                                summary="Developed a full-stack music assistant application designed to facilitate learning in
-                                    music theory. Utilized React for the front-end and SQL for database management, incorporating
-                                    a Node.js backend for efficient integration. Provided users interactive tools to
-                                    memorize chord progressions and scales, along with functionality to monitor
-                                    their learning progress."
+                                summary="Test summary"
                                 link="/"
                                 github="/"
                                 type="Featured Project"
@@ -142,13 +134,9 @@ const projects = () => {
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Crypto Screener Application"
+                                title="Test Project"
                                 img={project1}
-                                summary="Developed a full-stack music assistant application designed to facilitate learning in
-                                    music theory. Utilized React for the front-end and SQL for database management, incorporating
-                                    a Node.js backend for efficient integration. Provided users interactive tools to
-                                    memorize chord progressions and scales, along with functionality to monitor
-                                    their learning progress."
+                                summary="Test summary"
                                 link="/"
                                 github="/"
                                 type="Featured Project"
@@ -157,13 +145,9 @@ const projects = () => {
 
                         <div className="col-span-12">
                             <FeaturedProject
-                                title="Crypto Screener Application"
+                                title="Test Project"
                                 img={project1}
-                                summary="Developed a full-stack music assistant application designed to facilitate learning in
-                                    music theory. Utilized React for the front-end and SQL for database management, incorporating
-                                    a Node.js backend for efficient integration. Provided users interactive tools to
-                                    memorize chord progressions and scales, along with functionality to monitor
-                                    their learning progress."
+                                summary="Test summary"
                                 link="/"
                                 github="/"
                                 type="Featured Project"
@@ -171,13 +155,9 @@ const projects = () => {
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Crypto Screener Application"
+                                title="Test Project"
                                 img={project1}
-                                summary="Developed a full-stack music assistant application designed to facilitate learning in
-                                    music theory. Utilized React for the front-end and SQL for database management, incorporating
-                                    a Node.js backend for efficient integration. Provided users interactive tools to
-                                    memorize chord progressions and scales, along with functionality to monitor
-                                    their learning progress."
+                                summary="Test summary"
                                 link="/"
                                 github="/"
                                 type="Featured Project"
@@ -185,13 +165,9 @@ const projects = () => {
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Crypto Screener Application"
+                                title="Test Project"
                                 img={project1}
-                                summary="Developed a full-stack music assistant application designed to facilitate learning in
-                                    music theory. Utilized React for the front-end and SQL for database management, incorporating
-                                    a Node.js backend for efficient integration. Provided users interactive tools to
-                                    memorize chord progressions and scales, along with functionality to monitor
-                                    their learning progress."
+                                summary="Test summary."
                                 link="/"
                                 github="/"
                                 type="Featured Project"

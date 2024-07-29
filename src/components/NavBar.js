@@ -59,8 +59,8 @@ const NavBar = () => {
 
     return (
         <header
-            className='w-full px-32 py-8 font-medium flex items-center justify-between
-            dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8
+            className='fixed w-full px-32 py-8 font-medium flex items-center justify-between
+            dark:text-light z-10 lg:px-16 md:px-12 sm:px-8 bg-light dark:bg-dark
             '
         >
 
@@ -75,7 +75,7 @@ const NavBar = () => {
             <div className='w-full flex justify-between items-center lg:hidden'>
                 <nav>
                     <CustomLink href="/" title="Home" className='mr-4' />
-                    <CustomLink href="/about" title="About" className='mx-4' />
+                    {/* <CustomLink href="/about" title="About" className='mx-4' /> */}
                     <CustomLink href="/projects" title="Projects" className='mx-4' />
                     <CustomLink href="/articles" title="Articles" className='ml-4' />
                 </nav>
@@ -146,7 +146,7 @@ const NavBar = () => {
             '           >
                         <nav className='flex items-center flex-col justify-center'>
                             <CustomMobileLink href="/" title="Home" className='' toggle={handleClick} />
-                            <CustomMobileLink href="/about" title="About" className='' toggle={handleClick} />
+                            {/* <CustomMobileLink href="/about" title="About" className='' toggle={handleClick} /> */}
                             <CustomMobileLink href="/projects" title="Projects" className='' toggle={handleClick} />
                             <CustomMobileLink href="/articles" title="Articles" className='' toggle={handleClick} />
                         </nav>

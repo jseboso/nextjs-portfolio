@@ -42,9 +42,9 @@ const Experience = () => {
         }
     );
     return (
-        <div className='my-64'>
+        <div className='my-40'>
             <h2 className='font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16'>
-                Experience
+                Professional Experience
             </h2>
 
             <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
@@ -60,11 +60,12 @@ const Experience = () => {
                         position="Software Engineer Intern" company="Infinite Campus"
                         companyLink="www.google.com/"
                         time="Jan 2024-Present" address="Blaine, MN."
-                        work="Developed and maintained an activity registration page used by 10 million students across
-                    46 states using Angular (front-end) and Java (back-end), managing SQL database interactions
-                    for data integrity. Utilized Agile Scrum methodologies, including sprints and product backlog
-                    management, and collaborated in requirements analysis and solution design for optimal
-                    user experience and performance."
+                        work="Developed and maintained an activity registration page used by hundreds of
+                        school districts across 46 states using Angular (front-end) and Java (back-end),
+                        managing SQL database interactions for data integrity.
+                        Utilized Agile Scrum methodologies, including sprints and product backlog management, and collaborated in
+                        requirements analysis and solution design for accessibility and new feature development.
+                        "
                     />
 
                     <Details
