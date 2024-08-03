@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import profilePic from "../../public/images/profile/JSOHeadshot2.jpg";
 import secondPic from "../../public/images/profile/croppedJSO.png";
+import backgroundDoodles from "../../public/images/doodles/BackgroundRender3.png";
 import AnimatedText from '@/components/AnimatedText'
 import { LinkArrow } from '@/components/Icons'
 import TransitionEffect from '@/components/TransitionEffect'
@@ -24,17 +25,17 @@ const AnimatedNumbers = ({ value }) => {
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-      if (isInView) {
-          motionValue.set(value);
-      }
+    if (isInView) {
+      motionValue.set(value);
+    }
   }, [isInView, value, motionValue]);
 
   useEffect(() => {
-      springValue.on("change", (latest) => {
-          if (ref.current && latest.toFixed(0) <= value) {
-              ref.current.textContent = latest.toFixed(0);
-          }
-      })
+    springValue.on("change", (latest) => {
+      if (ref.current && latest.toFixed(0) <= value) {
+        ref.current.textContent = latest.toFixed(0);
+      }
+    })
   }, [springValue, value]);
 
   return <span ref={ref}></span>;
@@ -48,7 +49,9 @@ export default function Home() {
         <meta name="description" content="JSO Portfolio" />
       </Head>
       <TransitionEffect />
+        <Image src={backgroundDoodles} className='opacity-5 w-[100%] justify-center fixed xs:hidden' />
       <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
+
         <Layout className='pt-30 md:p-16 sm:pt-8'>
 
           <div className="flex items-center justify-between w-full lg:flex-col">
