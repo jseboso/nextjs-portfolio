@@ -49,7 +49,7 @@ export default function Home() {
         <meta name="description" content="JSO Portfolio" />
       </Head>
       <TransitionEffect />
-        <Image src={backgroundDoodles} className='opacity-5 w-[100%] justify-center fixed xs:hidden' />
+        <Image src={backgroundDoodles} alt="" className='opacity-5 w-[100%] justify-center fixed xs:hidden' />
       <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
 
         <Layout className='pt-30 md:p-16 sm:pt-8'>
