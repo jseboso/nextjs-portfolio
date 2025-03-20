@@ -5,7 +5,9 @@ import Link from "next/link";
 import Image from 'next/image';
 import React from "react";
 import { GithubIcon } from "@/components/Icons";
-import project1 from "../../public/images/projects/codeScreenshot.png"
+import testProjectImage from "../../public/images/projects/codeScreenshot.png"
+import project0 from "../../public/images/projects/portfolio.png"
+import project1 from "../../public/images/projects/schedule.png"
 import { motion } from "framer-motion"
 import TransitionEffect from "@/components/TransitionEffect";
 
@@ -114,39 +116,52 @@ const projects = () => {
                     <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
                         <div className="col-span-12">
                             <FeaturedProject
-                                title="Test Project"
+                                title="NextJS/Tailwind JSO Portfolio Website"
+                                img={project0}
+                                summary="A portfolio website created using NextJS, ReactJS, Tailwind, Node.js, and Framer Motion!"
+                                link="https://github.com/jseboso/nextjs-portfolio"
+                                github="https://github.com/jseboso/nextjs-portfolio"
+                                type="Featured Project"
+                            />
+                        </div>
+                        <div className="col-span-12">
+                            <FeaturedProject
+                                title="Schedule Server"
                                 img={project1}
-                                summary="Test summary"
-                                link="/"
-                                github="/"
+                                summary="A personal website featuring my weekly schedule, information about me, and various interactive features."
+                                link="https://github.com/jseboso/schedule-server"
+                                github="https://github.com/jseboso/schedule-server"
                                 type="Featured Project"
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Test Project"
-                                img={project1}
-                                summary="Test summary"
-                                link="/"
-                                github="/"
+                                title="Battery Simulator"
+                                img={testProjectImage}
+                                summary="C & Assembly Battery Display Simulator"
+                                link="https://github.com/jseboso/battery-simulator"
+                                github="https://github.com/jseboso/battery-simulator"
                                 type="Featured Project"
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Test Project"
-                                img={project1}
-                                summary="Test summary"
-                                link="/"
-                                github="/"
+                                title="Voting Machine"
+                                img={testProjectImage}
+                                summary="Election algorithm for Open Party Listing and Instant Runoff Election voting"
+                                link="https://github.com/jseboso/election-algorithm"
+                                github="https://github.com/jseboso/election-algorithm"
                                 type="Featured Project"
                             />
                         </div>
 
-                        <div className="col-span-12">
-                            <FeaturedProject
+                        
+                        {/* <div className="col-span-6 sm:col-span-12">
+                            <Project
                                 title="Test Project"
-                                img={project1}
+                                img={testProjectImage
+                                
+                                }
                                 summary="Test summary"
                                 link="/"
                                 github="/"
@@ -156,23 +171,15 @@ const projects = () => {
                         <div className="col-span-6 sm:col-span-12">
                             <Project
                                 title="Test Project"
-                                img={project1}
-                                summary="Test summary"
-                                link="/"
-                                github="/"
-                                type="Featured Project"
-                            />
-                        </div>
-                        <div className="col-span-6 sm:col-span-12">
-                            <Project
-                                title="Test Project"
-                                img={project1}
+                                img={testProjectImage
+                                
+                                }
                                 summary="Test summary."
                                 link="/"
                                 github="/"
                                 type="Featured Project"
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </Layout>
             </main>
