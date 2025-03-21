@@ -13,30 +13,34 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v4  # Upgrade to v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
           lfs: false
           
-      # Add explicit Node.js 20 setup
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Update to Node 20
+          node-version: '20'
           
-      # Add package.json engine check
-      - name: Update package.json engines
+      - name: Create .nvmrc file
+        run: echo "20" > .nvmrc
+        
+      # Create runtime configuration file for Azure Static Web Apps
+      - name: Create staticwebapp.config.json
         run: |
-          if [ -f package.json ]; then
-            # Check if engines field exists
-            if grep -q '"engines"' package.json; then
-              echo "Engines field exists in package.json"
-            else
-              # Add engines field
-              node -e "const pkg = require('./package.json'); pkg.engines = { node: '>=20.0.0' }; require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));"
-              echo "Added engines field to package.json"
-            fi
-          fi
+          echo '{
+            "platform": {
+              "apiRuntime": "node:20"
+            },
+            "routes": [
+              {
+                "route": "/*",
+                "serve": "/index.html",
+                "statusCode": 200
+              }
+            ]
+          }' > staticwebapp.config.json
           
       - name: Build And Deploy
         id: builddeploy
@@ -47,8 +51,9 @@ jobs:
           action: "upload"
           app_location: "/"
           api_location: ""
-          output_location: ".next"  # For Next.js
+          output_location: ".next"
           app_build_command: "npm run build"
+          node_version: "20"
           
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
