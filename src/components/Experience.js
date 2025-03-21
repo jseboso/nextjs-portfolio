@@ -58,7 +58,7 @@ const Experience = () => {
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     <Details
                         position="Software Engineer Intern" company="Infinite Campus"
-                        companyLink="www.google.com/"
+                        companyLink="https://www.infinitecampus.com/"
                         time="Jan 2024-Present" address="Blaine, MN."
                         work="Developed and maintained an activity registration page used by hundreds of
                         school districts across 46 states using Angular (front-end) and Java (back-end),
@@ -70,7 +70,7 @@ const Experience = () => {
 
                     <Details
                         position="Undergraduate Teaching Assistant" company="University of Minnesota"
-                        companyLink="www.google.com/"
+                        companyLink="https://twin-cities.umn.edu/"
                         time="Sep 2023 - Jan 2024" address="Minneapolis, MN."
                         work="Led weekly lab sections to teach 430 students to program in Java and object-oriented concepts.
                         Maintained weekly office hours and graded problem sets and exams. Used leadership and
@@ -79,7 +79,7 @@ const Experience = () => {
 
                     <Details
                         position="Computer Science Instructional Coordinator" company="Osiris Organization"
-                        companyLink="www.google.com/"
+                        companyLink="https://osirisorganization.org/"
                         time="Jun 2023 - Sep 2023" address="St Paul, MN."
                         work="Developed a Scratch-based curriculum to introduce programming concepts to over
                         120 middle and high school students at St. Paul Public Schools. Worked one-on-one with
@@ -88,7 +88,7 @@ const Experience = () => {
 
                     <Details
                         position="Technology and Communications Intern" company="ISD 622"
-                        companyLink="www.google.com/"
+                        companyLink="https://www.isd622.org/"
                         time="Jun 2023 - Sep 2023" address="Oakdale, MN."
                         work="Worked with technical support specialists to develop software troubleshooting and customer
                         service skills. Disassembled and repaired devices (iPads, Chromebooks) in a
