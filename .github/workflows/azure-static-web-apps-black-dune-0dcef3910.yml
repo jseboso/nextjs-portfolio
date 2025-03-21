@@ -1,5 +1,4 @@
 name: Azure Static Web Apps CI/CD
-
 on:
   push:
     branches:
@@ -8,31 +7,49 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4  # Upgrade to v4
         with:
           submodules: true
           lfs: false
+          
+      # Add explicit Node.js 20 setup
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Update to Node 20
+          
+      # Add package.json engine check
+      - name: Update package.json engines
+        run: |
+          if [ -f package.json ]; then
+            # Check if engines field exists
+            if grep -q '"engines"' package.json; then
+              echo "Engines field exists in package.json"
+            else
+              # Add engines field
+              node -e "const pkg = require('./package.json'); pkg.engines = { node: '>=20.0.0' }; require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));"
+              echo "Added engines field to package.json"
+            fi
+          fi
+          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLACK_DUNE_0DCEF3910 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
-
+          app_location: "/"
+          api_location: ""
+          output_location: ".next"  # For Next.js
+          app_build_command: "npm run build"
+          
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
