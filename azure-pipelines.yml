@@ -1,10 +1,9 @@
 # azure-pipelines.yml
-
 trigger:
   branches:
     include:
-      - main
-      - master
+    - main
+    - master
 
 pool:
   vmImage: 'ubuntu-latest'
