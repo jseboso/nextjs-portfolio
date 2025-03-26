@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import profilePic from "../../public/images/profile/JSO_portrait_outdoor.jpg";
 import secondPic from "../../public/images/profile/JSOHeadshot2.jpg";
-import backgroundDoodles from "../../public/images/doodles/BackgroundRender3.png";
 import AnimatedText from '@/components/AnimatedText'
 import { LinkArrow } from '@/components/Icons'
 import TransitionEffect from '@/components/TransitionEffect'
@@ -23,30 +22,30 @@ const Hero = () => {
       <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
         bg-light p-8 m-6 mr-10 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8'>
         <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
-        <Image 
-          src={profilePic} 
-          alt="Sebas Osorio" 
+        <Image
+          src={profilePic}
+          alt="Sebas Osorio"
           className='w-full h-auto rounded-2xl'
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      
+
       <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
-        <AnimatedText 
-          text="Jon Sebastian Osorio" 
-          className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl' 
+        <AnimatedText
+          text="Jon Sebastian Osorio"
+          className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl'
         />
-        
+
         <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>
           As a motivated and results-driven Colombian-American student at the University of Minnesota,
           I am keen on utilizing my programming expertise to create innovative solutions. I possess a strong foundation in languages such as Java, C++, Python, and JavaScript, alongside significant experience with SQL, Angular, and Node.js.
           In my free time I love playing volleyball, making music, and serving as a DJ for the university&apos;s radio station, Radio K.
         </p>
-        
+
         <div className='flex items-center self-start mt-2 lg:self-center'>
-          <Link 
-            href="/Jon Sebastian Osorio Resume - 2025.pdf" 
+          <Link
+            href="/Jon Sebastian Osorio Resume - 2025.pdf"
             target="_blank"
             className="flex items-center bg-dark text-light p-2.5 px-6
               rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
@@ -57,8 +56,8 @@ const Hero = () => {
           >
             Resume <LinkArrow className="w-6 ml-1" />
           </Link>
-          
-          <Link 
+
+          <Link
             href="mailto:jsebosorio@gmail.com"
             className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
           >
@@ -97,9 +96,9 @@ const ProfilePicture = () => {
     <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
       bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8'>
       <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
-      <Image 
-        src={secondPic} 
-        alt="Sebas Osorio" 
+      <Image
+        src={secondPic}
+        alt="Sebas Osorio"
         className='w-full h-auto rounded-2xl'
         priority
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -159,14 +158,11 @@ export default function Home() {
         <meta name="description" content="JSO Portfolio" />
       </Head>
       <TransitionEffect />
-      <Image src={backgroundDoodles} className='opacity-5 w-full justify-center fixed xs:hidden' />
-      
       <main className='flex items-center text-dark w-full min-h-screen dark:text-light'>
         <Layout className='pt-30 md:p-16 sm:pt-8'>
           <Hero />
         </Layout>
       </main>
-      
       <About />
     </>
   );

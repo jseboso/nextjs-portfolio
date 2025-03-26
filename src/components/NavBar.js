@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Logo from '@/components/Logo';
-import { TwitterIcon, GmailIcon, GithubIcon, LinkedInIcon, PinterestIcon, SunIcon, MoonIcon } from './Icons';
+import { GmailIcon, GithubIcon, LinkedInIcon, PinterestIcon, SunIcon, MoonIcon } from './Icons';
 import { useRouter } from 'next/router';
 import { motion } from "framer-motion";
 import useThemeSwitcher from './hooks/useThemeSwitcher';
@@ -48,14 +48,12 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 }
 
 const NavBar = () => {
-
     const [mode, setMode] = useThemeSwitcher();
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
         setIsOpen(!isOpen)
     };
-
 
     return (
         <header
@@ -76,17 +74,11 @@ const NavBar = () => {
                 <nav>
                     <CustomLink href="/" title="Home" className='mr-4' />
                     <CustomLink href="/projects" title="Projects" className='mx-4' />
+                    {/* <CustomLink href="/design-media" title="Design Media" className='ml-4' /> */}
                     {/* <CustomLink href="/articles" title="Articles" className='ml-4' /> */}
                 </nav>
 
                 <nav className="flex items-center justify-center flex-wrap">
-                    {/* <motion.a href="https://twitter.com" target={"_blank"}
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="w-6 mr-3"
-                    >
-                        <TwitterIcon />
-                    </motion.a> */}
                     <motion.a href="https://github.com/jseboso" target={"_blank"}
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
@@ -145,19 +137,11 @@ const NavBar = () => {
             '           >
                         <nav className='flex items-center flex-col justify-center'>
                             <CustomMobileLink href="/" title="Home" className='' toggle={handleClick} />
-                            {/* <CustomMobileLink href="/about" title="About" className='' toggle={handleClick} /> */}
                             <CustomMobileLink href="/projects" title="Projects" className='' toggle={handleClick} />
                             {/* <CustomMobileLink href="/articles" title="Articles" className='' toggle={handleClick} /> */}
                         </nav>
 
                         <nav className="flex items-center justify-center flex-wrap mt-2">
-                            {/* <motion.a href="https://twitter.com" target={"_blank"}
-                                whileHover={{ y: -2 }}
-                                whileTap={{ scale: 0.9 }}
-                                className="w-6 mr-3 sm:mx-1"
-                            >
-                                <TwitterIcon />
-                            </motion.a> */}
                             <motion.a href="https://github.com/jseboso" target={"_blank"}
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.9 }}
@@ -205,10 +189,6 @@ const NavBar = () => {
                     </motion.div>
                     : null
             }
-
-
-
-
             <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
                 <Logo />
             </div>
