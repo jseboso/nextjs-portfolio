@@ -59,12 +59,11 @@ const Experience = () => {
                     <Details
                         position="Software Engineer Intern" company="Infinite Campus"
                         companyLink="https://www.infinitecampus.com/"
-                        time="Jan 2024-Present" address="Blaine, MN."
-                        work="Developed and maintained an activity registration page used by hundreds of
-                        school districts across 46 states using Angular (front-end) and Java (back-end),
-                        managing SQL database interactions for data integrity.
+                        time="Jan 2024 - Present" address="Blaine, MN."
+                        work="Developed and maintained an activity registration page used by hundreds of school districts across 46 states 
+                        using Angular (front-end) and Java (back-end), managing SQL database interactions for data integrity.
                         Utilized Agile Scrum methodologies, including sprints and product backlog management, and collaborated in
-                        requirements analysis and solution design for accessibility and new feature development.
+                        requirements analysis and solution design for accessibility, new feature development, and unit testing.
                         "
                     />
 

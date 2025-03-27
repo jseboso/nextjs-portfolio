@@ -57,7 +57,7 @@ const Footer = () => {
                         <h3 className="text-lg font-semibold mb-3">Get In Touch</h3>
                         <FooterLink href="mailto:jsebosorio@gmail.com" target="_blank">Say hello <LinkArrow className="w-5 ml-1" /></FooterLink>
                         <p className="mt-4 text-center md:text-left text-sm max-w-md">
-                            I am always open to discussing new projects, creative ideas, or opportunities!
+                            {`I'm always open to discussing new projects, creative ideas, or opportunities!`}
                         </p>
                     </div>
                 </div>

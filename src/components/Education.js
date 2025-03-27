@@ -52,16 +52,19 @@ const Education = () => {
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     <Details
                         type="Bachelor Of Science In Computer Science"
-                        time="2021-Present"
+                        time="2021 - Present"
                         place="University of Minnesota Twin Cities"
-                        info="Relevant courses included Data Structures and Algorithms, User Interface Design, and Operating
-                        Systems."
+                        info="Relevant courses include Data Structures and Algorithms, User Interface Design, Operating
+                        Systems, Software Engineering I, Social Computing, Computer Graphics, Internet Programming,
+                        Program Design and Development, Artificial Intelligence.
+                        GPA: 3.86, Dean's List (x6), Distinction"
                     />
                     <Details
                         type="High School Diploma"
-                        time="2017-2021"
+                        time="2017 - 2021"
                         place="Math and Science Academy, Woodbury"
-                        info="Relevant activities include LINK Crew, Boy's Volleyball, Academic Triathlon, LEGO Robotics"
+                        info="Relevant activities include LINK Crew, Boy's Volleyball, Academic Triathlon, LEGO Robotics.
+                        GPA: 4.0"
                     />
                 </ul>
 
