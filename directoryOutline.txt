@@ -1,0 +1,57 @@
+nextjs-portfolio/
+├── .github/workflows
+│   └── azure-static-web-apps.yml
+├── .next/
+│   └── ...
+├── node_modules/
+│   └── ...
+├── public/
+│   ├── images/
+│   │   ├── articles/
+│   │   ├── designs/
+│   │   ├── doodles/
+│   │   ├── profile/
+│   │   ├── projects/
+│   │   └── svgs/
+│   ├── favicon.ico
+│   └── resume.pdf
+├── src/
+│   ├── components/
+│   │   ├── hooks/
+│   │   │   └── useThemeSwitcher.js
+│   │   ├── AnimatedNumbers.js
+│   │   ├── AnimatedText.js
+│   │   ├── DesignGallery.js
+│   │   ├── DesignIcons.js
+│   │   ├── Education.js
+│   │   ├── Experience.js
+│   │   ├── Footer.js
+│   │   ├── Icons.js
+│   │   ├── Layout.js
+│   │   ├── Lilcon.js
+│   │   ├── Logo.js
+│   │   ├── NavBar.js
+│   │   ├── Skills.js
+│   │   └── TransitionEffect.js
+│   ├── pages/
+│   │   ├── api/
+│   │   │   └── hello.js
+│   │   ├── _app.js
+│   │   ├── _document.js
+│   │   ├── about.js
+│   │   ├── articles.js
+│   │   ├── design-media.js
+│   │   ├── index.js
+│   │   └── projects.js
+│   └── styles/
+│       ├── globals.css
+│       └── Home.module.css
+├── .eslintrc.json
+├── .gitignore
+├── jsconfig.json
+├── next.config.json
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js

@@ -3,17 +3,22 @@ import Script from 'next/script'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" className="dark">
       <Head />
       <body>
         <Script id="theme_switcher" strategy="beforeInteractive">
           {`
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-              document.documentElement.classList.add('dark')
-              document.documentElement.classList.remove('light')
+            if (!localStorage.theme) {
+              localStorage.theme = 'dark';
+              document.documentElement.classList.add('dark');
             } else {
-              document.documentElement.classList.remove('dark')
-              document.documentElement.classList.add('light')
+              if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+              } else {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+              }
             }
           `}
         </Script>

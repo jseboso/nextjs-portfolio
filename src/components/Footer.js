@@ -4,16 +4,83 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { LinkArrow } from './Icons';
 
-const Footer = () => {
+const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const staggerContainer = {
+    animate: {
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.3
+        }
+    }
+};
+
+const SocialLink = ({ href, children, label }) => {
     return (
-        <footer className='w-full border-t-2 border-solid border-dark
-            dark:text-light dark:border-light font-medium
-            bg-light dark:bg-dark
+        <motion.a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group p-3 rounded-full bg-dark/5 dark:bg-light/5 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
+            whileHover={{ y: -5 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label={label}
+        >
+            <span className="text-dark dark:text-light text-lg">
+                {children}
+            </span>
+            <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-dark text-light dark:bg-light dark:text-dark text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                {label}
+            </span>
+        </motion.a>
+    );
+};
+
+const FooterLink = ({ href, children, target = "_self" }) => {
+    return (
+        <Link
+            href={href}
+            target={target}
+            className="relative text-dark/80 dark:text-light/80 hover:text-primary dark:hover:text-primaryDark
+                after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] 
+                after:bg-primary dark:after:bg-primaryDark after:origin-right after:scale-x-0 
+                hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300"
+        >
+            {children}
+        </Link>
+    );
+};
+
+const Footer = () => {
+    const currentYear = new Date().getFullYear();
+    
+    return (
+        <footer className='w-full border-t-2 border-solid border-dark/10
+            dark:text-light dark:border-light/10 font-medium mt-24
+            bg-light/50 dark:bg-dark/50 backdrop-blur-sm
         '>
-            <Layout className='py-8'>
-                <div className="flex flex-col items-center mb-8">
-                    <h2 className="text-xl font-bold mb-4">Connect With Me</h2>
-                    <div className="flex gap-6 mb-4">
+            <Layout className='py-12 flex flex-col md:py-8'>
+                <motion.div 
+                    className="flex flex-col items-center mb-12"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
+                    <motion.h2 
+                        className="text-2xl font-bold mb-6 text-primary dark:text-primaryDark"
+                        variants={fadeInUp}
+                    >
+                        Connect With Me
+                    </motion.h2>
+                    
+                    <motion.div 
+                        className="flex gap-6 mb-6"
+                        variants={fadeInUp}
+                    >
                         <SocialLink href="https://www.linkedin.com/in/jon-s-osorio/" label="LinkedIn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -32,37 +99,64 @@ const Footer = () => {
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </SocialLink>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="grid grid-cols-3 gap-4 mb-8 md:grid-cols-2 sm:grid-cols-1">
-                    <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-3">Navigation</h3>
-                        <ul className="space-y-2">
+                <motion.div 
+                    className="grid grid-cols-3 gap-8 mb-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
+                    <motion.div 
+                        className="flex flex-col items-center md:items-start"
+                        variants={fadeInUp}
+                    >
+                        <h3 className="text-lg font-semibold mb-4 text-primary dark:text-primaryDark">Navigation</h3>
+                        <ul className="space-y-3">
                             <li><FooterLink href="/">Home</FooterLink></li>
                             <li><FooterLink href="/projects">Projects</FooterLink></li>
-                            {/* <li><FooterLink href="/graphic-design">Graphic Design</FooterLink></li> */}
+                            {/* <li><FooterLink href="/design-media">Design Media</FooterLink></li> */}
                         </ul>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-lg font-semibold mb-3">About Me</h3>
-                        <ul className="space-y-2">
+                    <motion.div 
+                        className="flex flex-col items-center md:items-start"
+                        variants={fadeInUp}
+                    >
+                        <h3 className="text-lg font-semibold mb-4 text-primary dark:text-primaryDark">About Me</h3>
+                        <ul className="space-y-3">
                             <li><FooterLink href="https://www.radiok.org/" target="_blank">Radio K</FooterLink></li>
                             <li><FooterLink href="https://cse.umn.edu/" target="_blank">UMN Computer Science</FooterLink></li>
                         </ul>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-col items-center md:items-start md:col-span-2 sm:col-span-1">
-                        <h3 className="text-lg font-semibold mb-3">Get In Touch</h3>
-                        <FooterLink href="mailto:jsebosorio@gmail.com" target="_blank">Say hello <LinkArrow className="w-5 ml-1" /></FooterLink>
-                        <p className="mt-4 text-center md:text-left text-sm max-w-md">
+                    <motion.div 
+                        className="flex flex-col items-center md:items-start md:col-span-2 sm:col-span-1"
+                        variants={fadeInUp}
+                    >
+                        <h3 className="text-lg font-semibold mb-4 text-primary dark:text-primaryDark">Get In Touch</h3>
+                        <Link 
+                            href="mailto:jsebosorio@gmail.com" 
+                            target="_blank"
+                            className="btn-primary inline-flex items-center"
+                        >
+                            Say hello <LinkArrow className="w-5 ml-1" />
+                        </Link>
+                        <p className="mt-4 text-center md:text-left text-sm max-w-md dark:text-light/80">
                             {`I'm always open to discussing new projects, creative ideas, or opportunities!`}
                         </p>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="flex flex-col items-center pt-8 border-t border-dark/10 dark:border-light/10">
+                <motion.div 
+                    className="flex flex-col items-center pt-8 border-t border-dark/10 dark:border-light/10"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
                     <div className="flex items-center mb-4">
                         Built with
                         <motion.span
@@ -75,53 +169,18 @@ const Footer = () => {
                         by&nbsp;
                         <Link href="https://www.linkedin.com/in/jon-s-osorio/" className="font-bold
                             relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] 
-                            after:bg-dark dark:after:bg-light after:origin-left after:scale-x-0 
+                            after:bg-primary dark:after:bg-primaryDark after:origin-left after:scale-x-0 
                             hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out
                         ">
                             Sebas
                         </Link>
                     </div>
-                    <p className="text-sm text-dark/70 dark:text-light/70">
-                        {new Date().getFullYear()} &copy; All Rights Reserved.
+                    <p className="text-sm text-dark/50 dark:text-light/50">
+                        {currentYear} &copy; All Rights Reserved.
                     </p>
-                </div>
+                </motion.div>
             </Layout>
         </footer>
-    );
-};
-
-const SocialLink = ({ href, children, label }) => {
-    return (
-        <motion.a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group p-2 rounded-full bg-dark/5 dark:bg-light/5 hover:bg-dark/10 dark:hover:bg-light/10 transition-colors"
-            whileHover={{ y: -5 }}
-            aria-label={label}
-        >
-            <span className="text-dark dark:text-light">
-                {children}
-            </span>
-            <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-dark text-light dark:bg-light dark:text-dark text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                {label}
-            </span>
-        </motion.a>
-    );
-};
-
-const FooterLink = ({ href, children, target = "_self" }) => {
-    return (
-        <Link
-            href={href}
-            target={target}
-            className="relative text-dark/80 dark:text-light/80 hover:text-dark dark:hover:text-light
-                after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] 
-                after:bg-dark dark:after:bg-light after:origin-right after:scale-x-0 
-                hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300"
-        >
-            {children}
-        </Link>
     );
 };
 
