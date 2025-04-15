@@ -238,7 +238,7 @@ const ProjectsPage = () => {
           />
 
           <p className="text-center mb-12 text-lg md:text-base sm:text-sm max-w-3xl mx-auto">
-            My portfolio of projects showcasing my skills in web development, software engineering, and more. Each project represents a unique challenge I've tackled using various technologies.
+            My portfolio of projects showcasing my skills in web development, software engineering, and more. Each project represents a unique challenge I&apos;ve tackled using various technologies.
           </p>
 
           <motion.section
@@ -327,14 +327,14 @@ const ProjectsPage = () => {
           <div className="mt-24 text-center">
             <h2 className="text-2xl font-bold mb-4">Interested in working together?</h2>
             <p className="mb-6 max-w-lg mx-auto">
-              I'm always open to discussing new projects, creative ideas, and opportunities.
+              I&apos;m always open to discussing new projects, creative ideas, and opportunities.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 href="mailto:jsebosorio@gmail.com" 
                 className="inline-block bg-primary text-light dark:bg-primaryDark dark:text-dark py-3 px-8 rounded-lg font-semibold"
               >
-                Let's Connect
+                Let&apos;s Connect
               </Link>
             </motion.div>
           </div>
