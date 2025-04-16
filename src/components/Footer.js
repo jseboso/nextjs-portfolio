@@ -129,6 +129,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li><FooterLink href="https://www.radiok.org/" target="_blank">Radio K</FooterLink></li>
                             <li><FooterLink href="https://cse.umn.edu/" target="_blank">UMN Computer Science</FooterLink></li>
+                            <li><FooterLink href="https://shpe.org/" target="_blank">Society of Hispanic Professional Engineers</FooterLink></li>
                         </ul>
                     </motion.div>
 
