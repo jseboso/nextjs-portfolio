@@ -80,7 +80,7 @@ const Experience = () => {
                         position="Computer Science Instructional Coordinator" company="Osiris Organization"
                         companyLink="https://osirisorganization.org/"
                         time="Jun 2023 - Sep 2023" address="St Paul, MN."
-                        work="Developed a Scratch-based curriculum to introduce programming concepts to over
+                        work="Developed a Scratch and Python-based curriculum to introduce programming concepts to over
                         120 middle and high school students at St. Paul Public Schools. Worked one-on-one with
                         instructors to more effectively teach problem solving fundamentals and computer literacy to students."
                     />
@@ -89,9 +89,11 @@ const Experience = () => {
                         position="Technology and Communications Intern" company="ISD 622"
                         companyLink="https://www.isd622.org/"
                         time="Jun 2023 - Sep 2023" address="Oakdale, MN."
-                        work="Worked with technical support specialists to develop software troubleshooting and customer
-                        service skills. Disassembled and repaired devices (iPads, Chromebooks) in a
-                        district of 10,700+ students."
+                        work="Collaborated with technical support specialists to debug district-wide educational
+                        software and enhance internal support systems. Assisted in designing and developing a technical
+                        services webpage to streamline device repair requests and IT resources for a district of 10,700+
+                        students. Also gained hands-on experience repairing and configuring devices such as iPads
+                        and Chromebooks."
                     />
                 </ul>
 
