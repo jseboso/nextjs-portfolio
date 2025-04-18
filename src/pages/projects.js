@@ -176,6 +176,16 @@ const ProjectsPage = () => {
       techStack: ["Next.js", "Supabase", "Electron", "TailwindCSS"]
     },
     {
+      title: "Mi Gente Event Manager",
+      img: project2,
+      summary: "A full-stack student org website for Mi Gente LSCC at UMN - built with Next.js, React, Tailwind CSS, MongoDB, and NextAuth. Features event listings, RSVP, board profiles, and admin tools.",
+      link: "https://github.com/jseboso/mi-gente-event-manager",
+      github: "https://github.com/jseboso/mi-gente-event-manager",
+      type: "Featured Project",
+      category: "Web Development",
+      techStack: ["Next.js", "MongoDB", "NextAuth", "Sharp/Formidable"]
+    },
+    {
       title: "NextJS/Tailwind JSO Portfolio Website",
       img: project0,
       summary: "A portfolio website created using NextJS, ReactJS, Tailwind, Node.js, and Framer Motion!",
@@ -202,7 +212,7 @@ const ProjectsPage = () => {
       link: "https://github.com/jseboso/battery-simulator",
       github: "https://github.com/jseboso/battery-simulator",
       type: "Featured Project",
-      category: "Machine Learning",
+      category: "Embedded Systems",
       techStack: ["C", "Assembly", "Embedded Systems"]
     },
     {
@@ -212,7 +222,7 @@ const ProjectsPage = () => {
       link: "https://github.com/jseboso/election-algorithm",
       github: "https://github.com/jseboso/election-algorithm",
       type: "Featured Project", 
-      category: "Web Development",
+      category: "Backend Development",
       techStack: ["Java", "Algorithms", "Data Structures"]
     }
   ];
