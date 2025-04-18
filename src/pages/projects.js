@@ -9,6 +9,7 @@ import testProjectImage from "../../public/images/projects/codeScreenshot.png"
 import project0 from "../../public/images/projects/portfolio.png"
 import project1 from "../../public/images/projects/schedule.png"
 import project2 from "../../public/images/projects/scale-explorer.png"
+import project3 from "../../public/images/projects/event-manager.png"
 import { motion } from "framer-motion"
 import TransitionEffect from "@/components/TransitionEffect";
 
@@ -177,7 +178,7 @@ const ProjectsPage = () => {
     },
     {
       title: "Mi Gente Event Manager",
-      img: project2,
+      img: project3,
       summary: "A full-stack student org website for Mi Gente LSCC at UMN - built with Next.js, React, Tailwind CSS, MongoDB, and NextAuth. Features event listings, RSVP, board profiles, and admin tools.",
       link: "https://github.com/jseboso/mi-gente-event-manager",
       github: "https://github.com/jseboso/mi-gente-event-manager",
