@@ -32,8 +32,8 @@ My modern portfolio website showcasing my professional experience, projects, and
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
+git clone https://github.com/jseboso/nextjs-portfolio.git
+cd nextjs-portfolio
 ```
 
 2. Install dependencies
