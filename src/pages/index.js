@@ -66,7 +66,7 @@ const Hero = () => {
         />
 
         <p className='my-4 text-xl font-medium md:text-sm sm:text-xs'>
-          As a motivated and results-driven Colombian-American student at the University of Minnesota,
+          As a motivated and results-driven Colombian-American University of Minnesota graduate,
           I am keen on utilizing my programming expertise to create innovative solutions. I possess a strong foundation in languages such as Java, C++, Python, and JavaScript, alongside significant experience with SQL, Angular, and Node.js.
           In my free time I love playing volleyball, making music, and serving as a DJ for the university&apos;s radio station, Radio K.
         </p>
@@ -108,7 +108,7 @@ const Biography = () => {
     <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
       <h2 className='mb-4 text-2xl font-bold uppercase text-primary dark:text-primaryDark'>Biography</h2>
       <p className='font-medium text-xl'>
-        {`Hi, I'm Jon (Sebas) Osorio, a web developer and software engineer intern with a passion for creating beautiful, functional,
+        {`Hi, I'm Jon (Sebas) Osorio, a full-stack software engineer with a passion for creating beautiful, functional,
         and user-centered digital experiences. With over 3 years of experience in the field. I am always looking for
         new and innovative ways to bring my clients' visions to life.`}
       </p>

@@ -51,13 +51,13 @@ const Education = () => {
 
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     <Details
-                        type="Bachelor Of Science In Computer Science"
-                        time="2021 - Present"
+                        type="Bachelor Of Science In Computer Science (with Distinction)"
+                        time="2021 - May 2025"
                         place="University of Minnesota Twin Cities"
-                        info="Relevant courses include Data Structures and Algorithms, User Interface Design, Operating
+                        info="College of Science and Engineering - Relevant courses include Data Structures and Algorithms, User Interface Design, Operating
                         Systems, Software Engineering I, Social Computing, Computer Graphics, Internet Programming,
                         Program Design and Development, Artificial Intelligence.
-                        GPA: 3.86, Dean's List (x6), Distinction"
+                        GPA: 3.86, Dean's List Award (x6)"
                     />
                     <Details
                         type="High School Diploma"

@@ -57,23 +57,35 @@ const Experience = () => {
 
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     <Details
+                        position="Software Engineer I" company="Infinite Campus"
+                        companyLink="https://www.infinitecampus.com/"
+                        time="Apr 2025 - Present" address="Blaine, MN."
+                        work="Engineered full-stack features for the Stores & Activities team using Angular, Java, and SQL,
+                        delivering new tools like the Activity History page to over 10 million students. Boosted front-end
+                        performance by up to 50% through component optimization and enhanced accessibility for screen reader
+                        users. Developed RESTful APIs, integrated Stripe for payment processing, and improved code quality
+                        with automated tests using Cypress and Jest. Demonstrated leadership by mentoring a software
+                        engineering intern and facilitating Agile sprints."
+                    />
+
+                    <Details
                         position="Software Engineer Intern" company="Infinite Campus"
                         companyLink="https://www.infinitecampus.com/"
-                        time="Jan 2024 - Present" address="Blaine, MN."
-                        work="Developed and maintained an activity registration page used by hundreds of school districts across 46 states 
-                        using Angular (front-end) and Java (back-end), managing SQL database interactions for data integrity.
-                        Utilized Agile Scrum methodologies, including sprints and product backlog management, and collaborated in
-                        requirements analysis and solution design for accessibility, new feature development, and unit testing.
-                        "
+                        time="Jan 2024 - April 2025" address="Blaine, MN."
+                        work="Developed and maintained an activity registration page used by hundreds of school districts across 47 states
+                        using Angular (front-end) and Java (back-end). Built and integrated RESTful APIs, managed SQL data integrity, and
+                        implemented automated unit testing. Collaborated in Agile sprints on requirements analysis,
+                        accessibility improvements, and new feature design."
                     />
 
                     <Details
                         position="Undergraduate Teaching Assistant" company="University of Minnesota"
                         companyLink="https://twin-cities.umn.edu/"
                         time="Sep 2023 - Jan 2024" address="Minneapolis, MN."
-                        work="Led weekly lab sections to teach 430 students to program in Java and object-oriented concepts.
-                        Maintained weekly office hours and graded problem sets and exams. Used leadership and
-                        collaboration skills to effectively deliver a higher education Java-based curriculum."
+                        work="Mentored 430+ students in foundational Java and Object-Oriented Programming, clarifying complex
+                        technical concepts during weekly labs and office hours. Reviewed student code submissions, providing
+                        constructive feedback on programming style, efficiency, and logic to reinforce software development
+                        best practices."
                     />
 
                     <Details
