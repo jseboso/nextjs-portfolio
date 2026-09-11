@@ -5,7 +5,6 @@ import Image from 'next/image';
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
-import backgroundDoodles from "../../public/images/doodles/BackgroundRender3.png";
 import { LeftArrow, RightArrow, ExpandIcon, CloseIcon } from "@/components/DesignIcons";
 
 const designs = [

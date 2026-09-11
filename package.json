@@ -6,24 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "eslint": "^9.22.0",
-    "eslint-config-next": "^15.2.3",
+    "eslint-config-next": "^16.3.4",
     "framer-motion": "^12.5.0",
-    "glob": "^11.0.1",
-    "next": "^15.2.3",
+    "next": "^16.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "rimraf": "^6.0.1",
-    "sharp": "^0.33.5",
-    "zod": "^3.24.2"
+    "sharp": "^0.35.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.4.19",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.28",
     "tailwindcss": "^3.4.3"
   }
 }

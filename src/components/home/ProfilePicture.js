@@ -12,6 +12,7 @@ const ProfilePicture = () => {
         alt="Sebas Osorio"
         className='w-full h-auto rounded-2xl'
         priority
+        unoptimized
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>

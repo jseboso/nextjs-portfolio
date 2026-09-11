@@ -160,6 +160,7 @@ const BackgroundGraphics = () => {
   const [shapes, setShapes] = useState([]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setShapes(generateShapes());
   }, []);
 

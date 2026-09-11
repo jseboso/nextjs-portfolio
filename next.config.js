@@ -2,7 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
-  
+
+  turbopack: {
+    root: __dirname,
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
