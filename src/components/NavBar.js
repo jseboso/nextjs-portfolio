@@ -33,7 +33,7 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
     }
 
     return (
-        <button href={href} className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
+        <button className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
             {title}
 
             <span className={`
@@ -74,43 +74,46 @@ const NavBar = () => {
                 <nav>
                     <CustomLink href="/" title="Home" className='mr-4' />
                     <CustomLink href="/projects" title="Projects" className='mx-4' />
-                    {/* <CustomLink href="/design-media" title="Design Media" className='ml-4' /> */}
-                    {/* <CustomLink href="/articles" title="Articles" className='ml-4' /> */}
                 </nav>
 
-                <nav className="flex items-center justify-center flex-wrap">
-                    <motion.a href="https://github.com/jseboso" target={"_blank"}
+                <nav className="flex items-center justify-center flex-wrap gap-6">
+                    <motion.a href="https://github.com/jseboso" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-6 mx-3"
+                        className="w-6"
                     >
                         <GithubIcon />
                     </motion.a>
-                    <motion.a href="https://www.linkedin.com/in/jon-s-osorio/" target={"_blank"}
+                    <motion.a href="https://www.linkedin.com/in/jon-s-osorio/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-6 mx-3"
+                        className="w-6"
                     >
                         <LinkedInIcon />
                     </motion.a>
-                    <motion.a href="https://www.pinterest.com/sebasifas/" target={"_blank"}
+                    <motion.a href="https://www.pinterest.com/sebasifas/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Pinterest"
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-6 mx-3 bg-light rounded-full"
+                        className="w-6 bg-light rounded-full"
                     >
                         <PinterestIcon />
                     </motion.a>
-                    <motion.a href="mailto:jsebosorio@gmail.com" target={"_blank"}
+                    <motion.a href="mailto:jsebosorio@gmail.com"
+                        aria-label="Email"
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="w-6 ml-3"
+                        className="w-6"
                     >
                         <GmailIcon />
                     </motion.a>
 
                     <button
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}
-                        className={`ml-3 flex items-center justify-center rounded-full p-1
+                        aria-label={mode === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                        className={`flex items-center justify-center rounded-full p-1
                         ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}
                         `}
                     >
@@ -138,42 +141,46 @@ const NavBar = () => {
                         <nav className='flex items-center flex-col justify-center'>
                             <CustomMobileLink href="/" title="Home" className='' toggle={handleClick} />
                             <CustomMobileLink href="/projects" title="Projects" className='' toggle={handleClick} />
-                            {/* <CustomMobileLink href="/articles" title="Articles" className='' toggle={handleClick} /> */}
                         </nav>
 
-                        <nav className="flex items-center justify-center flex-wrap mt-2">
-                            <motion.a href="https://github.com/jseboso" target={"_blank"}
+                        <nav className="flex items-center justify-center flex-wrap gap-6 sm:gap-2 mt-2">
+                            <motion.a href="https://github.com/jseboso" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub"
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.9 }}
-                                className="w-6 mx-3 bg-light rounded-full dark:bg-dark sm:mx-1"
+                                className="w-6 bg-light rounded-full dark:bg-dark"
                             >
                                 <GithubIcon />
                             </motion.a>
-                            <motion.a href="https://www.linkedin.com/in/jon-s-osorio/" target={"_blank"}
+                            <motion.a href="https://www.linkedin.com/in/jon-s-osorio/" target="_blank" rel="noopener noreferrer"
+                                aria-label="LinkedIn"
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.9 }}
-                                className="w-6 mx-3 sm:mx-1"
+                                className="w-6"
                             >
                                 <LinkedInIcon />
                             </motion.a>
-                            <motion.a href="https://www.pinterest.com/sebasifas/" target={"_blank"}
+                            <motion.a href="https://www.pinterest.com/sebasifas/" target="_blank" rel="noopener noreferrer"
+                                aria-label="Pinterest"
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.9 }}
-                                className="w-6 mx-3 bg-light rounded-full sm:mx-1"
+                                className="w-6 bg-light rounded-full"
                             >
                                 <PinterestIcon />
                             </motion.a>
-                            <motion.a href="mailto:jsebosorio@gmail.com" target={"_blank"}
+                            <motion.a href="mailto:jsebosorio@gmail.com"
+                                aria-label="Email"
                                 whileHover={{ y: -2 }}
                                 whileTap={{ scale: 0.9 }}
-                                className="w-6 ml-3 sm:mx-1"
+                                className="w-6"
                             >
                                 <GmailIcon />
                             </motion.a>
 
                             <button
                                 onClick={() => setMode(mode === "light" ? "dark" : "light")}
-                                className={`ml-3 flex items-center justify-center rounded-full p-1
+                                aria-label={mode === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                                className={`flex items-center justify-center rounded-full p-1
                         ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}
                         `}
                             >

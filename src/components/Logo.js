@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from "framer-motion";
+import brandColors from '@/lib/colors';
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 
 const Logo = () => {
@@ -13,7 +14,7 @@ const Logo = () => {
              rounded-md text-3xl font-bold border border-solid border-transparent dark:border-light
             '
                 whileHover={{
-                    backgroundColor: ["#121212", "#B63E96", "#58E6D9", "#121212"],
+                    backgroundColor: [brandColors.dark, brandColors.primary, brandColors.primaryDark, brandColors.dark],
                     transition:{duration:4, repeat: Infinity}
                 }}
             >JSO</MotionLink>

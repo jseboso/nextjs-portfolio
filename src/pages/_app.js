@@ -4,9 +4,9 @@ import Head from "next/head";
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import BackgroundGraphics from '@/components/BackgroundGraphics';
+import GrainOverlay from '@/components/GrainOverlay';
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -15,14 +15,7 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  
-  useEffect(() => {
-    if (!localStorage.theme) {
-      localStorage.theme = 'dark';
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-  
+
   return (
     <>
       <Head>
@@ -32,6 +25,7 @@ export default function App({ Component, pageProps }) {
       <main className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen relative z-0 transition-colors duration-300`}>
         <NavBar />
         <BackgroundGraphics />
+        <GrainOverlay />
         <AnimatePresence mode="wait">
           <Component key={router.asPath} {...pageProps} />
         </AnimatePresence>

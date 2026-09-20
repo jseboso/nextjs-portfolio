@@ -2,6 +2,7 @@
 
 
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const brandColors = require('./src/lib/colors');
 
 
 module.exports = {
@@ -14,39 +15,20 @@ module.exports = {
       fontFamily: {
         mont: ['var(--font-mont)', ...fontFamily.sans],
       },
-      colors: {
-        dark: "#1b1b1b",
-        light: "#f5f5f5",
-        primary: "#B63E96", // 240,86,199
-        primaryDark: "#58E6D9", // 80,230,217
-      },
+      colors: brandColors,
       animation: {
         'spin-slow': 'spin 15s linear infinite',
+        shimmer: 'shimmer 2.5s linear infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
+        },
       },
       backgroundImage: {
-        circularLight:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)",
-
-        circularDark:
-          "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,rgba(0,0,0,0.0) 8px,rgba(0,0,0,0.0) 100px)",
-
-        circularLightLg:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 80px)",
-
-        circularDarkLg:
-          "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,rgba(0,0,0,0.0) 8px,rgba(0,0,0,0.0) 80px)",
-
-        circularLightMd:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 60px)",
-
-        circularDarkMd:
-          "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,rgba(0,0,0,0.0) 6px,rgba(0,0,0,0.0) 60px)",
-
-        circularLightSm:
-          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 40px)",
-
-        circularDarkSm:
-          "repeating-radial-gradient(rgba(255,255,255,0.5) 2px,rgba(0,0,0,0.0) 4px,rgba(0,0,0,0.0) 40px)",
+        brandGradient: `linear-gradient(120deg, ${brandColors.primary} 0%, ${brandColors.primaryDark} 100%)`,
+        brandGradientText: `linear-gradient(100deg, ${brandColors.primary} 10%, ${brandColors.primaryDark} 55%, ${brandColors.primary} 90%)`,
       }
     },
     screens: {

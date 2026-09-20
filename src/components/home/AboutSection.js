@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import AnimatedText from '@/components/AnimatedText';
-import Skills from '@/components/Skills';
+import TechStack from '@/components/TechStack';
 import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import Biography from './Biography';
@@ -18,7 +18,7 @@ const AboutSection = () => {
           <ProfilePicture />
           <Stats />
         </div>
-        <Skills />
+        <TechStack />
         <Experience />
         <Education />
       </Layout>

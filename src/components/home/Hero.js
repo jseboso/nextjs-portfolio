@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import profilePic from "../../../public/images/profile/JSO_portrait_outdoor.jpg";
 import AnimatedText from '@/components/AnimatedText';
+import GradientBorderCard from '@/components/GradientBorderCard';
+import GradientButton from '@/components/GradientButton';
 import { LinkArrow } from '@/components/Icons';
 import AnimatedButton from './AnimatedButton';
 
@@ -17,11 +19,14 @@ const fadeIn = {
 
 const Hero = () => {
   return (
-    <div className="flex items-center justify-between w-full lg:flex-col">
+    <div className="grid grid-cols-[2fr_3fr] gap-x-12 items-center w-full max-w-[1168px] mx-auto
+      md:gap-x-8 lg:grid-cols-1 lg:gap-y-10">
       {/* Profile Picture Headshot */}
-      <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
-        bg-light p-8 m-6 mr-10 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8'>
-        <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />
+      <GradientBorderCard
+        rounded="rounded-2xl"
+        className="w-full mx-auto lg:max-w-sm md:order-1"
+        innerClassName="p-8"
+      >
         <Image
           src={profilePic}
           alt="Sebas Osorio"
@@ -30,36 +35,31 @@ const Hero = () => {
           unoptimized
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </div>
+      </GradientBorderCard>
 
-      <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
+      <div className='flex flex-col items-center self-center lg:w-full lg:text-center'>
         <AnimatedText
           text="Jon Sebastian Osorio"
-          className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl'
+          className='!text-6xl !text-left xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl
+            !text-transparent !bg-clip-text !bg-brandGradientText bg-[length:200%_auto] animate-shimmer'
         />
 
-        <p className='my-4 text-xl font-medium md:text-sm sm:text-xs'>
-          As a motivated and results-driven Colombian-American University of Minnesota graduate,
-          I am keen on utilizing my programming expertise to create innovative solutions. I possess a strong foundation in languages such as Java, C++, Python, and JavaScript, alongside significant experience with SQL, Angular, and Node.js.
-          In my free time I love playing volleyball, making music, and serving as a DJ for the university&apos;s radio station, Radio K.
+        <p className='my-4 max-w-prose self-start lg:self-center text-xl font-medium md:text-sm sm:text-xs'>
+          Colombian-American software engineer and University of Minnesota graduate, building with Java, Python, JavaScript, and modern web tools like React and Node.js.
+          Off the clock, I&apos;m playing volleyball, making music, or running.
         </p>
 
         <motion.div
           className='flex items-center self-start mt-4 lg:self-center space-x-4'
           variants={fadeIn}
         >
-          <AnimatedButton
-            href="/Jon Sebastian Osorio Resume - 2025.pdf"
-            target="_blank"
-            className="flex items-center bg-primary text-light p-2.5 px-6
-              rounded-lg text-lg font-semibold
-              border-2 border-solid border-transparent hover:bg-transparent hover:text-primary hover:border-primary
-              dark:bg-primaryDark dark:text-dark dark:hover:bg-transparent dark:hover:text-primaryDark dark:hover:border-primaryDark
-              md:p-2 md:px-4 md:text-base transition-all duration-300"
+          <GradientButton
+            href="/Jon Sebastian Osorio - Resume 2026.pdf"
             download={true}
+            className="text-lg md:text-base"
           >
             Resume <LinkArrow className="w-6 ml-1" />
-          </AnimatedButton>
+          </GradientButton>
 
           <AnimatedButton
             href="mailto:jsebosorio@gmail.com"

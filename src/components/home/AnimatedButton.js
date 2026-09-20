@@ -11,6 +11,7 @@ const AnimatedButton = ({ href, download, className, children }) => {
       <Link
         href={href}
         target={download ? "_blank" : "_self"}
+        rel={download ? "noopener noreferrer" : undefined}
         className={className}
         download={download}
       >

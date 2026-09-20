@@ -3,27 +3,15 @@ import Layout from './Layout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { LinkArrow } from './Icons';
-
-const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
-
-const staggerContainer = {
-    animate: {
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.3
-        }
-    }
-};
+import GradientButton from './GradientButton';
+import { fadeInUp, staggerContainer } from '@/lib/motion';
 
 const SocialLink = ({ href, children, label }) => {
+    const isExternal = !href.startsWith('mailto:');
     return (
         <motion.a
             href={href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className="relative group p-3 rounded-full bg-dark/5 dark:bg-light/5 hover:bg-primary/20 dark:hover:bg-primaryDark/20 transition-colors"
             whileHover={{ y: -5 }}
             whileTap={{ scale: 0.9 }}
@@ -44,6 +32,7 @@ const FooterLink = ({ href, children, target = "_self" }) => {
         <Link
             href={href}
             target={target}
+            rel={target === "_blank" ? "noopener noreferrer" : undefined}
             className="relative text-dark/80 dark:text-light/80 hover:text-primary dark:hover:text-primaryDark
                 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] 
                 after:bg-primary dark:after:bg-primaryDark after:origin-right after:scale-x-0 
@@ -117,7 +106,6 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li><FooterLink href="/">Home</FooterLink></li>
                             <li><FooterLink href="/projects">Projects</FooterLink></li>
-                            {/* <li><FooterLink href="/design-media">Design Media</FooterLink></li> */}
                         </ul>
                     </motion.div>
 
@@ -138,13 +126,9 @@ const Footer = () => {
                         variants={fadeInUp}
                     >
                         <h3 className="text-lg font-semibold mb-4 text-primary dark:text-primaryDark">Get In Touch</h3>
-                        <Link 
-                            href="mailto:jsebosorio@gmail.com" 
-                            target="_blank"
-                            className="btn-primary inline-flex items-center"
-                        >
+                        <GradientButton href="mailto:jsebosorio@gmail.com">
                             Say hello <LinkArrow className="w-5 ml-1" />
-                        </Link>
+                        </GradientButton>
                         <p className="mt-4 text-center md:text-left text-sm max-w-md dark:text-light/80">
                             {`I'm always open to discussing new projects, creative ideas, or opportunities!`}
                         </p>
@@ -168,7 +152,7 @@ const Footer = () => {
                             &#9825;
                         </motion.span>
                         by&nbsp;
-                        <Link href="https://www.linkedin.com/in/jon-s-osorio/" className="font-bold
+                        <Link href="https://www.linkedin.com/in/jon-s-osorio/" target="_blank" rel="noopener noreferrer" className="font-bold
                             relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] 
                             after:bg-primary dark:after:bg-primaryDark after:origin-left after:scale-x-0 
                             hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out

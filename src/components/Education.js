@@ -1,14 +1,18 @@
 import React, { useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import LiIcon from './LiIcon'
+import useTimelineLine from './hooks/useTimelineLine'
 
 
 const Details = ({ type, time, place, info }) => {
-    const ref = useRef(null);
     return (
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
-            <LiIcon reference={ref} />
+        <li className='my-8 first:mt-0 last:mb-0 w-full flex items-center gap-x-6 md:gap-x-4'>
+            <div data-timeline-icon className='relative z-10 shrink-0 flex items-center justify-center w-[75px] md:w-[60px] xs:w-[40px]'>
+                <LiIcon />
+            </div>
             <motion.div
+                className='flex-1 rounded-2xl bg-light/[0.04] dark:bg-light/[0.05] backdrop-blur-md
+                border border-dark/5 dark:border-light/10 p-6 md:p-4 xs:p-3'
                 initial={{ y: 50 }}
                 whileInView={{ y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
@@ -35,21 +39,28 @@ const Education = () => {
             offset: ["start end", "center start"]
         }
     );
+    const line = useTimelineLine(ref);
     return (
         <div>
-            <h2 className='font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16'>
+            <motion.h2
+                className='font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16'
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+                viewport={{ once: true, margin: '-80px' }}
+            >
                 Education
-            </h2>
+            </motion.h2>
 
             <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
                 <motion.div
-                    style={{ scaleY: scrollYProgress }}
-                    className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light
-                    md:w-[2px] md:left-[30px] xs:left-[20px]
+                    style={{ scaleY: scrollYProgress, top: line.top, height: line.height }}
+                    className='absolute left-[34.5px] w-[6px] bg-brandGradient origin-top rounded-full
+                    md:w-[3px] md:left-[28.5px] xs:left-[18.5px]
                     '
                 />
 
-                <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
+                <ul className='w-full flex flex-col'>
                     <Details
                         type="Bachelor Of Science In Computer Science (with Distinction)"
                         time="2021 - May 2025"
